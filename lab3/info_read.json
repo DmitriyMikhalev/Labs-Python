@@ -1,0 +1,24 @@
+{
+    "upload": "2022-11-04 19:39:47.643957",
+    "animals": [
+        {
+            "cls": "Cat",
+            "name": "Рыжик",
+            "age": 9,
+            "is_male": true
+        },
+        {
+            "cls": "Dog",
+            "name": "Ютта",
+            "age": 7,
+            "is_male": false
+        },
+        {
+            "cls": "Human",
+            "name": "Егор",
+            "age": 17,
+            "is_male": true,
+            "nationality": "русский"
+        }
+    ]
+}

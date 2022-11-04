@@ -1,27 +1,32 @@
 {
-    "upload": "2022-11-04 18:17:05.544342",
+    "upload": "2022-11-04 20:42:39.198988",
     "animals": [
         {
+            "cls": "Cat",
             "name": "Магнат",
             "age": 4,
             "is_male": true
         },
         {
+            "cls": "Dog",
             "name": "Лаки",
             "age": 4,
             "is_male": true
         },
         {
+            "cls": "Bear",
             "name": "Маша",
             "age": 2,
             "is_male": false
         },
         {
+            "cls": "Wolf",
             "name": "Серый",
             "age": 6,
             "is_male": true
         },
         {
+            "cls": "Human",
             "name": "Paul",
             "age": 33,
             "is_male": true,

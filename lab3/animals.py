@@ -1,4 +1,7 @@
-class Animal():
+from abc import ABC, abstractmethod
+
+
+class Animal(ABC):
     average_lifetime: int
 
     def __init__(self, name: str, age: int, is_male: bool = True) -> None:
@@ -6,17 +9,22 @@ class Animal():
         self._age = age
         self._is_male = is_male
 
+    @abstractmethod
     def say(self):
         pass
 
+    @abstractmethod
     def hunt(self) -> str:
         return f'{self._name} охотится.'
 
     def __str__(self) -> str:
         return self._name
 
-    def to_json_dict(self):
-        result = {}
+    def __repr__(self):
+        return f'<\'{self.__class__.__name__}\' object: {self._name}>'
+
+    def to_dict(self):
+        result = {"cls": self.__class__.__name__}
         for param in self.__dict__:
             result[param[1:]] = self.__dict__[param]
 
