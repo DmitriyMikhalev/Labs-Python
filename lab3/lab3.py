@@ -5,18 +5,14 @@ from animals import Bear, Cat, Dog, Human, Wolf
 from json_functions import read_json, valid_data, write_json
 
 
-def str_to_class(classname: str):
-    return getattr(sys.modules[__name__], classname)
-
-
 def main() -> None:
-    cat = Cat(name='Магнат', age=4)
-    dog = Dog(name='Лаки', age=4)
-    bear = Bear(name='Маша', age=2, is_male=False)
-    wolf = Wolf(name='Серый', age=6)
-    human = Human(name='Paul', age=33, nationality='американец')
+    bear = Bear(age=2, is_male=False, name='Маша')
+    cat = Cat(age=4, name='Магнат')
+    dog = Dog(age=4, name='Лаки')
+    human = Human(age=33, name='Paul', nationality='американец')
+    wolf = Wolf(age=6, name='Серый')
 
-    objects = [cat, dog, bear, wolf, human, ]
+    objects = [bear, cat, dog, human, wolf, ]
     data = {
         'upload': str(datetime.today()),
         'animals': [],
@@ -27,15 +23,19 @@ def main() -> None:
     write_json(data)
 
     objects.clear()
-    data = read_json()
+    data: dict = read_json()
     if valid_data(data):
         for obj in data['animals']:
             klass = str_to_class(obj.pop('cls'))
             objects.append(klass(**obj))
 
-        with open('output_read.txt', 'w', encoding='utf-8') as file:
+        with open(encoding='utf-8', file='output_read.txt', mode='w') as file:
             output = ', '.join(str(obj) for obj in objects)
             file.write(output)
+
+
+def str_to_class(classname: str):
+    return getattr(sys.modules[__name__], classname)
 
 
 if __name__ == '__main__':
