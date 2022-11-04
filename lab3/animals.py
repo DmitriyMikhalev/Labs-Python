@@ -71,7 +71,10 @@ class Bear(Animal):
         return f'{self._name} впадает в зимнюю спячку.'
 
     def awake(self) -> str:
-        return f'{self._name} проснулся слишком рано и стал шатуном!'
+        if self._is_male:
+            return f'{self._name} проснулся слишком рано и стал шатуном!'
+
+        return f'{self._name} проснулась слишком рано и стала шатуном!'
 
 
 class Human(Animal):
