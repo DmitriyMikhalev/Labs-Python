@@ -1,0 +1,31 @@
+{
+    "upload": "2022-11-04 18:17:05.544342",
+    "animals": [
+        {
+            "name": "Магнат",
+            "age": 4,
+            "is_male": true
+        },
+        {
+            "name": "Лаки",
+            "age": 4,
+            "is_male": true
+        },
+        {
+            "name": "Маша",
+            "age": 2,
+            "is_male": false
+        },
+        {
+            "name": "Серый",
+            "age": 6,
+            "is_male": true
+        },
+        {
+            "name": "Paul",
+            "age": 33,
+            "is_male": true,
+            "nationality": "американец"
+        }
+    ]
+}

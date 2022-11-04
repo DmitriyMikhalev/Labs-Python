@@ -15,6 +15,13 @@ class Animal():
     def __str__(self) -> str:
         return self._name
 
+    def to_json_dict(self):
+        result = {}
+        for param in self.__dict__:
+            result[param[1:]] = self.__dict__[param]
+
+        return result
+
 
 class Cat(Animal):
     average_lifetime: int = 17
