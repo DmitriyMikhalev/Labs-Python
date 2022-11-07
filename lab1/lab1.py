@@ -1,27 +1,33 @@
 import csv
 import os
-from pprint import pprint
 
 
 def retrieve_cols(data: list):
-    return list(map(lambda row: [row[i] for i in (7, 10, 11)], data[1:]))
+    return list(map(lambda row: [row[i] for i in (7, 10, 11)], data))
 
 
-def filter_rows(data: list):
-    return list(filter(None, data))
+def validate_row(row: list):
+    return row[10] != 'Unknown'
 
 
-def read_data(filename: str):
+def filter_rows(row: list):
+    return list(filter(validate_row, row))
+
+
+def read_data(filename: str) -> list:
     path = os.path.dirname(os.path.abspath(__file__)) + '/' + filename
     with open(path, 'r') as file:
-        data = list(csv.reader(file, delimiter=','))
+        return list(csv.reader(file, delimiter=','))[1:]
 
-    return data
+
+def get_valid_data(filename: str) -> list:
+    return retrieve_cols(filter_rows(read_data(filename)))
 
 
 def main():
-    data = read_data('healthcare-dataset-stroke-data.csv')
-    pprint(data[0:15])
+    data = get_valid_data('healthcare-dataset-stroke-data.csv')
+    for val in data:
+        print(val)
 
 
 if __name__ == '__main__':
