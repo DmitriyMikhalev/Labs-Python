@@ -1,0 +1,3 @@
+INFO - 2022-11-08 02:37:15,835 - main - 135 - __main__ - Data was successfully parsed and transformed.
+INFO - 2022-11-08 02:37:15,836 - main - 139 - __main__ - Percents were calculated successfully.
+INFO - 2022-11-08 02:37:15,837 - main - 149 - __main__ - Result was successfully written into file.
